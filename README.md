@@ -15,22 +15,32 @@ Before using this tool, you need to obtain a sysdiagnose file from your iPad:
 2. **Visual Tutorial**: Visit the author's Redbook homepage (ID: 1557442523) for detailed notes.
 
 ## 📁 Preparation (Crucial Steps)
-1. **Save File**: After generating sysdiagnose, share and save it to the iPad **"Files"** app (recommended in the root of "On My iPad" or "Downloads").
-   - **Filename Example**: `sysdiagnose_2026.03.14_14-57-07+0800_iPhone-OS_iPad_23D8133.tar.gz`
-2. **Mount in iSH**:
-   Run the following commands in iSH to access iPad system folders:
-   ```bash
-   mkdir -p /mnt/ipad
-   mount -t ios dummy /mnt/ipad
-   ```
-   *A file picker will appear. Select the folder containing your sysdiagnose and tap "Open" or "Done".*
+
+### 1. Setup iSH Environment (First-time users)
+Run the following commands in your iSH terminal to install required components:
+```bash
+apk update
+apk add wget tar ca-certificates
+```
+
+### 2. Save Sysdiagnose File
+After generating sysdiagnose, share and save it to the iPad **"Files"** app (recommended in the root of "On My iPad" or "Downloads").
+- **Filename Example**: `sysdiagnose_2026.03.14_14-57-07+0800_iPhone-OS_iPad_23D8133.tar.gz`
+
+### 3. Mount in iSH
+Run the following commands in iSH to access iPad system folders:
+```bash
+mkdir -p /mnt/ipad
+mount -t ios dummy /mnt/ipad
+```
+*A file picker will appear. Select the folder containing your sysdiagnose and tap "Open" or "Done".*
 
 ## 🚀 iSH Installation & Usage
 Copy and run the following command in your iSH terminal:
 ```bash
-# Download and extract the tool
-wget https://github.com/Carmel0/Apple-Pencil-Find-Assistant/releases/download/v2.0/pencil_analyzer-v2.0.tar.gz && \
-tar -zxf pencil_analyzer-v2.0.tar.gz && \
+# Download and extract the tool (v3.1)
+wget https://github.com/Carmel0/Apple-Pencil-Find-Assistant/releases/download/v3.1/pencil_analyzer-v3.1.tar.gz && \
+tar -zxf pencil_analyzer-v3.1.tar.gz && \
 cd pencil_analyzer-release/ && \
 chmod +x pencil_analyzer
 
@@ -40,7 +50,7 @@ chmod +x pencil_analyzer
 
 ## 💡 Finding Guidance
 - After running the analysis, focus on the timestamp of the last **Lost** event that does NOT have a subsequent **Found** event.
-- Recall your location at that specific time; that is the likely location of your Pencil.
+- **Strongest Evidence**: The strongest evidence of loss is when a Lost event coincides with a high absolute RSSI or matches the Last Physical Conn time, with no subsequent Found events.
 
 ## ☕ Support the Author
 If this tool helped you, please consider liking or leaving a message on my Redbook pinned post, or send a "Lemon Tea" tip to Alipay: **carmel0@me.com**. 🍋

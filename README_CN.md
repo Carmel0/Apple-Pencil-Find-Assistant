@@ -13,23 +13,33 @@
 2. **图文教程**：也可前往作者小红书首页（ID: 1557442523）查看相关笔记。
 
 ## 📁 准备工作 (关键步骤)
-1. **保存文件**：生成 sysdiagnose 后，请将其分享并保存到 iPad 的 **“文件 (Files)”** 应用中（建议直接存放在“我的 iPad”根目录或“下载”文件夹）。
-   - **文件名样例**：`sysdiagnose_2026.03.14_14-57-07+0800_iPhone-OS_iPad_23D8133.tar.gz`
-2. **挂载到 iSH**：
-   在 iSH 中运行以下命令来访问 iPad 的系统文件夹：
-   ```bash
-   mkdir -p /mnt/ipad
-   mount -t ios dummy /mnt/ipad
-   ```
-   *执行后会弹出 iOS 系统文件选择器，请选择包含诊断包的文件夹并点击右上角的“打开”或“完成”。*
+
+### 1. 配置 iSH 环境 (初次使用必做)
+在 iSH 终端中运行以下命令安装必要组件：
+```bash
+apk update
+apk add wget tar ca-certificates
+```
+
+### 2. 保存诊断文件
+生成 sysdiagnose 后，请将其分享并保存到 iPad 的 **“文件 (Files)”** 应用中（建议直接存放在“我的 iPad”根目录或“下载”文件夹）。
+- **文件名样例**：`sysdiagnose_2026.03.14_14-57-07+0800_iPhone-OS_iPad_23D8133.tar.gz`
+
+### 3. 挂载到 iSH
+运行以下命令来访问 iPad 的系统文件夹：
+```bash
+mkdir -p /mnt/ipad
+mount -t ios dummy /mnt/ipad
+```
+*执行后会弹出 iOS 系统文件选择器，请选择包含诊断包的文件夹并点击右上角的“打开”或“完成”。*
 
 ## 🚀 iSH 一键安装与使用
-在 iPad 的 iSH 终端中直接复制并运行以下指令：
+在 iSH 终端中直接复制并运行以下指令：
 ```bash
-# 下载并解压工具 (以 v1.1 为例)
-wget https://github.com/Carmel0/Apple-Pencil-Find-Assistant/releases/download/v1.1/pencil_analyzer-v1.1.tar.gz && \
-tar -zxf pencil_analyzer-v1.1.tar.gz && \
-cd pencil_analyzer-v1.1-release/ && \
+# 下载并解压工具 (以 v3.1 为例)
+wget https://github.com/Carmel0/Apple-Pencil-Find-Assistant/releases/download/v3.1/pencil_analyzer-v3.1.tar.gz && \
+tar -zxf pencil_analyzer-v3.1.tar.gz && \
+cd pencil_analyzer-release/ && \
 chmod +x pencil_analyzer
 
 # 运行分析 (假设诊断包在挂载点根目录)
@@ -38,7 +48,7 @@ chmod +x pencil_analyzer
 
 ## 💡 找回指引
 - 运行分析后，请重点关注最后一次 **Lost** 但是没有后续 **Found** 的记录时间。
-- 根据该时间点回忆您当时的活动范围，即为笔的大致丢失位置。
+- **最强证据**：最强证据是 Lost 时间与最后一次 RSSI 骤降同步，且最后物理连接时间与 Lost 时间重合，之后再无 Found 记录。此时间点即为笔离开连接范围的精确时刻。
 
 ## ☕ 赞赏与支持
 如果有帮到找回可以到小红书置顶笔记收藏或留言，或者到支付宝 **carmel0@me.com** 赞赏请喝柠檬茶。🍋
