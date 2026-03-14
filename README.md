@@ -7,7 +7,9 @@ This software is completely FREE! Any form of selling is strictly prohibited.
 Author Redbook (小红书) ID: **1557442523**
 
 ## 📖 Introduction
-This is a system log analysis tool specifically designed for iPadOS, running in the iSH (Alpine Linux) environment. By analyzing sysdiagnose packages, it accurately captures Apple Pencil **Lost** and **Found** events, helping you locate your lost Pencil through a precise timeline.
+This is a system log analysis tool specifically designed for **iPadOS 26.3+**, running in the iSH (Alpine Linux) environment. By analyzing sysdiagnose packages, it accurately captures Apple Pencil **Lost** and **Found** events, helping you locate your lost Pencil through a precise timeline.
+
+> **Note**: This tool is optimized for newer iPadOS versions. For older systems, the log structure may differ, and we recommend manual analysis using the macOS Console app.
 
 ## 📂 How to get sysdiagnose
 Before using this tool, you need to obtain a sysdiagnose file from your iPad:
@@ -38,9 +40,9 @@ mount -t ios dummy /mnt/ipad
 ## 🚀 iSH Installation & Usage
 Copy and run the following command in your iSH terminal:
 ```bash
-# Download and extract the tool (v3.1)
-wget https://github.com/Carmel0/Apple-Pencil-Find-Assistant/releases/download/v3.1/pencil_analyzer-v3.1.tar.gz && \
-tar -zxf pencil_analyzer-v3.1.tar.gz && \
+# Download and extract the tool (v3.2)
+wget https://github.com/Carmel0/Apple-Pencil-Find-Assistant/releases/download/v3.2/pencil_analyzer-v3.2.tar.gz && \
+tar -zxf pencil_analyzer-v3.2.tar.gz && \
 cd pencil_analyzer-release/ && \
 chmod +x pencil_analyzer
 

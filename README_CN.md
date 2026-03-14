@@ -5,7 +5,9 @@
 作者小红书 ID: **1557442523**
 
 ## 📖 简介
-这是一个专为 iPadOS 打造的系统日志分析工具，运行于 iSH (Alpine Linux) 环境。它能通过分析 sysdiagnose 诊断包，精准捕获 Apple Pencil 的 **Lost (信号丢失)** 和 **Found (重新发现)** 事件，帮助您通过时间线找回丢失的爱笔。
+这是一个专为 **iPadOS 26.3+** 打造的系统日志 analysis 工具，运行于 iSH (Alpine Linux) 环境。它能通过分析 sysdiagnose 诊断包，精准捕获 Apple Pencil 的 **Lost (信号丢失)** 和 **Found (重新发现)** 事件，帮助您通过时间线找回丢失的爱笔。
+
+> **注意**：本工具针对较新版本的 iPadOS 进行了优化。对于更早期的系统，日志结构可能不同，建议手动连接 Mac 使用“控制台”应用进行分析。
 
 ## 📂 诊断包获取方式
 在使用本工具前，您需要先从 iPad 获取 sysdiagnose 诊断文件：
@@ -34,11 +36,11 @@ mount -t ios dummy /mnt/ipad
 *执行后会弹出 iOS 系统文件选择器，请选择包含诊断包的文件夹并点击右上角的“打开”或“完成”。*
 
 ## 🚀 iSH 一键安装与使用
-在 iSH 终端中直接复制并运行以下指令：
+在 iPad 的 iSH 终端中直接复制并运行以下指令：
 ```bash
-# 下载并解压工具 (以 v3.1 为例)
-wget https://github.com/Carmel0/Apple-Pencil-Find-Assistant/releases/download/v3.1/pencil_analyzer-v3.1.tar.gz && \
-tar -zxf pencil_analyzer-v3.1.tar.gz && \
+# 下载并解压工具 (以 v3.2 为例)
+wget https://github.com/Carmel0/Apple-Pencil-Find-Assistant/releases/download/v3.2/pencil_analyzer-v3.2.tar.gz && \
+tar -zxf pencil_analyzer-v3.2.tar.gz && \
 cd pencil_analyzer-release/ && \
 chmod +x pencil_analyzer
 
