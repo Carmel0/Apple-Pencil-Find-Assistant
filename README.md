@@ -1,30 +1,47 @@
-# Apple Pencil 找回助手 (Apple Pencil Find Assistant)
+# Apple Pencil Find Assistant
 
-## 📢 软件声明
-本软件纯免费！禁止任何形式的售卖。
-作者小红书 ID: **1557442523**
+[中文说明 (Chinese Version)](README_CN.md)
 
-## 📖 简介
-这是一个专为 iPadOS 打造的系统日志分析工具，运行于 iSH (Alpine Linux) 环境。它能通过分析 sysdiagnose 诊断包，精准捕获 Apple Pencil 的 **Lost (信号丢失)** 和 **Found (重新发现)** 事件，帮助您通过时间线找回丢失的爱笔。
+## 📢 Software Statement
+This software is completely FREE! Any form of selling is strictly prohibited.
+Author Redbook (小红书) ID: **1557442523**
 
-## 📂 诊断包获取方式
-在使用本工具前，您需要先从 iPad 获取 sysdiagnose 诊断文件：
-1. **官方教程**：请查看 [Apple 官方支持文档](https://support.apple.com/zh-cn/guide/platform-support/supd3f43814e/web)。
-2. **图文教程**：也可前往作者小红书首页（ID: 1557442523）查看相关笔记。
+## 📖 Introduction
+This is a system log analysis tool specifically designed for iPadOS, running in the iSH (Alpine Linux) environment. By analyzing sysdiagnose packages, it accurately captures Apple Pencil **Lost** and **Found** events, helping you locate your lost Pencil through a precise timeline.
 
-## 🚀 iSH 一键安装与使用
-在 iPad 的 iSH 终端中直接复制并运行以下指令：
+## 📂 How to get sysdiagnose
+Before using this tool, you need to obtain a sysdiagnose file from your iPad:
+1. **Official Guide**: Refer to the [Apple Support Document](https://support.apple.com/zh-cn/guide/platform-support/supd3f43814e/web).
+2. **Visual Tutorial**: Visit the author's Redbook homepage (ID: 1557442523) for detailed notes.
+
+## 📁 Preparation (Crucial Steps)
+1. **Save File**: After generating sysdiagnose, share and save it to the iPad **"Files"** app (recommended in the root of "On My iPad" or "Downloads").
+   - **Filename Example**: `sysdiagnose_2026.03.14_14-57-07+0800_iPhone-OS_iPad_23D8133.tar.gz`
+2. **Mount in iSH**:
+   Run the following commands in iSH to access iPad system folders:
+   ```bash
+   mkdir -p /mnt/ipad
+   mount -t ios dummy /mnt/ipad
+   ```
+   *A file picker will appear. Select the folder containing your sysdiagnose and tap "Open" or "Done".*
+
+## 🚀 iSH Installation & Usage
+Copy and run the following command in your iSH terminal:
 ```bash
-wget https://github.com/Carmel0/Apple-Pencil-Find-Assistant/releases/download/v1.0/pencil_analyzer-v1.0.tar.gz && \
-tar -zxf pencil_analyzer-v1.0.tar.gz && \
-chmod +x pencil_analyzer && \
-./pencil_analyzer [您的诊断包路径.tar.gz]
+# Download and extract the tool
+wget https://github.com/Carmel0/Apple-Pencil-Find-Assistant/releases/download/v1.2/pencil_analyzer-v1.2.tar.gz && \
+tar -zxf pencil_analyzer-v1.2.tar.gz && \
+cd pencil_analyzer-release/ && \
+chmod +x pencil_analyzer
+
+# Run analysis (assuming sysdiagnose is in the mount root)
+./pencil_analyzer /mnt/ipad/sysdiagnose_YOUR_FILENAME.tar.gz
 ```
 
-## 💡 找回指引
-- 运行分析后，请重点关注最后一次 **Lost** 但是没有后续 **Found** 的记录时间。
-- 根据该时间点回忆您当时的活动范围，即为笔的大致丢失位置。
+## 💡 Finding Guidance
+- After running the analysis, focus on the timestamp of the last **Lost** event that does NOT have a subsequent **Found** event.
+- Recall your location at that specific time; that is the likely location of your Pencil.
 
-## ☕ 赞赏与支持
-如果有帮到找回可以到小红书置顶笔记收藏或留言，或者到支付宝 **carmel0@me.com** 赞赏请喝柠檬茶。🍋
-祝您早日找回爱笔！
+## ☕ Support the Author
+If this tool helped you, please consider liking or leaving a message on my Redbook pinned post, or send a "Lemon Tea" tip to Alipay: **carmel0@me.com**. 🍋
+Good luck finding your Pencil!
