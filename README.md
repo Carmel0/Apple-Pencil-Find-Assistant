@@ -7,6 +7,11 @@
 ## 📖 简介
 这是一个专为 iPadOS 打造的系统日志分析工具，运行于 iSH (Alpine Linux) 环境。它能通过分析 sysdiagnose 诊断包，精准捕获 Apple Pencil 的 **Lost (信号丢失)** 和 **Found (重新发现)** 事件，帮助您通过时间线找回丢失的爱笔。
 
+## 📂 诊断包获取方式
+在使用本工具前，您需要先从 iPad 获取 sysdiagnose 诊断文件：
+1. **官方教程**：请查看 [Apple 官方支持文档](https://support.apple.com/zh-cn/guide/platform-support/supd3f43814e/web)。
+2. **图文教程**：也可前往作者小红书首页（ID: 1557442523）查看相关笔记。
+
 ## 🚀 iSH 一键安装与使用
 在 iPad 的 iSH 终端中直接复制并运行以下指令：
 ```bash
