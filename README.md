@@ -29,8 +29,8 @@ Before using this tool, you need to obtain a sysdiagnose file from your iPad:
 Copy and run the following command in your iSH terminal:
 ```bash
 # Download and extract the tool
-wget https://github.com/Carmel0/Apple-Pencil-Find-Assistant/releases/download/v1.2/pencil_analyzer-v1.2.tar.gz && \
-tar -zxf pencil_analyzer-v1.2.tar.gz && \
+wget https://github.com/Carmel0/Apple-Pencil-Find-Assistant/releases/download/v2.0/pencil_analyzer-v2.0.tar.gz && \
+tar -zxf pencil_analyzer-v2.0.tar.gz && \
 cd pencil_analyzer-release/ && \
 chmod +x pencil_analyzer
 
